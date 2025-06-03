@@ -1,7 +1,7 @@
 // app/notes/page.tsx
 import { auth } from '@clerk/nextjs/server';
 import prisma from '@/lib/db/prisma';
-import { Note } from '@/lib/generated/prisma';
+import { Note } from '@prisma/client';
 
 export default async function Notes() {
   try {
