@@ -1,7 +1,7 @@
 // app/api/chat/route.ts
 
-import { auth } from "@clerk/nextjs/server";
-import { NextResponse } from "next/server";
+/* import { auth } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server"; */
 import { getEmbedding, openai } from "@/lib/openai";
 import prisma from "@/lib/db/prisma";
 import index from "@/lib/db/pinecone";
@@ -12,10 +12,10 @@ import {
 
 export async function POST(request: Request) {
   try {
-    const { userId } = await auth();
+   /*  const { userId } = await auth();
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
-    }
+    } */
 
     const body = await request.json();
     const messages: ChatCompletionMessageParam[] = body.messages;
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     const pineconeResult = await index.query({
       vector: embedding,
       topK: 1,
-      filter: { userId: { $eq: userId } },
+      /* filter: { userId: { $eq: userId } }, */
     });
 
     // Extract matched note IDs
