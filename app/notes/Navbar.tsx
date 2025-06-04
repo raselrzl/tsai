@@ -7,6 +7,7 @@ import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import AddNoteDialog from "../component/AddNote";
+import Aichatbutton from "../component/AIchatButton";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,6 +56,7 @@ export default function Navbar() {
                 <Plus size={24} strokeWidth={2} className="text-white" />
                 Add Notes
               </Button>
+              <Aichatbutton />
             </div>
 
             {/* Mobile Hamburger */}
