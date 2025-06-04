@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { CornerRightUp, Loader2 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function SimpleChat() {
   const [input, setInput] = useState('');
@@ -54,11 +55,12 @@ export default function SimpleChat() {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [messages, pendingMessage]);
+  
 
   return (
     <main className="p-4 sm:p-6 max-w-7xl w-full mx-auto flex justify-center flex-col items-center">
       <div className="flex flex-row min-w-full justify-between">
-        <p className="text-2xl font-extrabold">Flyg-Chat</p>
+        <Link href="/" className="text-2xl font-extrabold uppercase">Flyg-Chat</Link>
         <p className="bg-gray-50 px-4 py-1 rounded-lg">Login</p>
       </div>
 
